@@ -1,32 +1,32 @@
-# STEPS AND INSTALLATION
-First, you need to install the necessary libraries by running pip install selenium in your command prompt or terminal.
+Install Dependencies: Ensure you have Python and the required packages installed. You can install the necessary packages using pip.
 
-Download the WebDriver for your preferred browser (Microsoft Edge or Chrome) from the links provided in the code comments.
+Download WebDriver: Download the appropriate WebDriver for your browser (ChromeDriver for Chrome, EdgeDriver for Edge) and place it in a known directory.
 
-Chrome: https://developer.chrome.com/docs/chromedriver/downloads
+Run the Script: Use the command line to run the script with the required arguments.
 
-Edge: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH
+Step-by-Step Instructions:
+Install Dependencies: pip install selenium
 
-Replace "path/to/edge/driver" and "path/to/chrome/driver" with the actual paths to the WebDriver executables you downloaded.
+Download WebDriver:
 
-Replace "VIDEO_ID" with the actual ID of the YouTube video you want to simulate views for.
+For Chrome: [Chromedriver] (https://sites.google.com/a/chromium.org/chromedriver/downloads)
+For Edge: [EdgeDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)
+Update the WebDriver Path: Ensure the paths to the WebDriver executables are correctly specified in the script: 
 
-Choose whether you want to use Microsoft Edge or Chrome by setting the browser variable to "edge" or "chrome".
+self.driver = webdriver.Edge(service=EdgeService("path/to/edge/driver"), options=options)
 
-Create an instance of the YouTubeViewBot class, passing the chosen browser as an argument: view_bot = YouTubeViewBot(browser).
+self.driver = webdriver.Chrome(service=ChromeService("path/to/chrome/driver"), options=options)
 
-Call the run method of the view_bot instance, passing the URL of the video, the number of views to simulate, and a boolean indicating whether it's a livestream or not: view_bot.run(url, num_views, is_live).
+Run the Script: Open a command prompt or terminal and navigate to the directory containing your script. Run the script with the required arguments. For example:
 
-The viewbot will open the specified video in the chosen browser and simulate the specified number of views.
+Example Command: python viewbot.py "https://www.youtube.com/watch?v=example" 10 --browser chrome --headless
 
+Command-Line Arguments:
+url: The URL of the YouTube video.
+num_views: The number of views to simulate.
+--live: Indicate if the video is a livestream (optional).
+--browser: The browser to use (chrome or edge).
+--headless: Run the browser in headless mode (optional).
+Full Example: python viewbot.py "https://www.youtube.com/watch?v=OLHpJv0vzXI" 10000 --browser edge --headless
 
-For example:
-url = "https://www.youtube.com/watch?v=VIDEO_ID"
-num_views = 1000
-is_live = False
-browser = "chrome"
-
-view_bot = YouTubeViewBot(browser)
-view_bot.run(url, num_views, is_live)
-
-This will open the video with the specified ID in Chrome, simulate 1000 views, and determine if it's a livestream or not based on the value of is_live.
+This command will simulate 10000 views on the specified YouTube video using Edge in headless mode, and it will treat the video as a livestream. Adjust the arguments as needed for your specific use case.
