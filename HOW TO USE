@@ -17,6 +17,18 @@ self.driver = webdriver.Edge(service=EdgeService("path/to/edge/driver"), options
 
 self.driver = webdriver.Chrome(service=ChromeService("path/to/chrome/driver"), options=options)
 
+Find the XPATH for the video:
+
+Open the YouTube video page in your browser.
+
+Right-click on the view button and select "Inspect" or "Inspect Element" to open the browser's Developer Tools.
+
+In the Elements tab, you will see the HTML structure of the page. Locate the view button element.
+
+Right-click on the view button element in the Elements tab and select "Copy" > "Copy XPath" to get the XPath of the element.
+
+Once you have the correct XPath, you can update your code accordingly. Here is an example of how you might update the XPath in your code:
+
 Run the Script: Open a command prompt or terminal and navigate to the directory containing your script. Run the script with the required arguments. For example:
 
 Example Command: python viewbot.py "https://www.youtube.com/watch?v=example" 10 --browser chrome --headless
