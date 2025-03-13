@@ -3,6 +3,10 @@ First, you need to install the necessary libraries by running pip install seleni
 
 Download the WebDriver for your preferred browser (Microsoft Edge or Chrome) from the links provided in the code comments.
 
+Chrome: https://developer.chrome.com/docs/chromedriver/downloads
+
+Edge: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH
+
 Replace "path/to/edge/driver" and "path/to/chrome/driver" with the actual paths to the WebDriver executables you downloaded.
 
 Replace "VIDEO_ID" with the actual ID of the YouTube video you want to simulate views for.
